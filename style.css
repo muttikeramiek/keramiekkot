@@ -1,0 +1,247 @@
+:root {
+  --blauw: #A8CFEF;
+  --geel: #F9D98A;
+  --koraal: #F4A89A;
+  --beige: #FDF6F0;
+}
+
+/* Basisstijl */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  background-color: var(--beige);
+  line-height: 1.6;
+}
+
+/* Secties */
+header, section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Achtergronden */
+
+/* Navigatie */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: var(--koraal);
+}
+
+.bg-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.bg-section1 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 120px; /* zodat tekst niet onder de navigatie valt */
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.bg-section2 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 120px; /* zodat tekst niet onder de navigatie valt */
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.bg-section .over,
+.bg-section .over p,
+.bg-section .over span,
+.bg-section .over strong,
+.bg-section2 .contact-item {
+  color: #F4D7C8;
+}
+
+.bg-section2 .content,
+.bg-section2 .content p,
+.bg-section2 .content span,
+.bg-section2 .content strong,
+.bg-section2 .contact-item {
+  color: #F4D7C8;
+}
+
+/* Achtergrondfoto achter alles */
+.bg-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  z-index: -2;
+}
+
+/* Overlay voor leesbaarheid */
+#contact .bg-photo {
+  object-position: top;
+}
+
+/* Tekst boven overlay */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Titels & tekst */
+h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color:#C85C50;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #F4D7C8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* extra leesbaarheid */
+}
+
+p {
+  max-width: 700px;
+  font-size: 1.2rem;
+}
+
+/* Fotogalerij */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Zoommodal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Portret */
+.portrait {
+  width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+/* Contact */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .portrait {
+    width: 180px;
+  }
+}

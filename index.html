@@ -1,10 +1,118 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Mijn Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutti's Keramiek Kot</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welkom op mijn website</h1>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#galerij">Fotogalerij</a>
+    <a href="#over">Over mij</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+<section id="home" class="bg-section1">
+    <img src="IMG-20260610_bg1.jpg" class="bg-photo" alt="">
+
+    <div class="content">
+        <h1><b>Mutti's Keramiek Kot</b></h1>
+        <p class="tagline">Klei met karakter — werken van eigen hand</p>
+        <p>
+            Keramiek is het samenspel van aarde, water, lucht en vuur.
+            Elk stuk ontstaat uit een eenvoudige klomp klei die met zorg wordt opgebouwd,
+            gedraaid en gebakken.
+        </p>
+    </div>
+</section>
+
+  <section id="over" class="bg-section">
+    <img src="IMG-20260610_bg3.jpg" class="bg-photo" alt="">
+    <h2>Over mij</h2>
+    <p style="color: #F4D7C8;"><b>Martine Cox</b></p><br>
+    <p style="color: #F4D7C8;"><b>Na enkele jaren kunstacademie ontdekte ik mijn passie voor keramiek.<br>  
+       Door te experimenteren met vorm, glazuur en raku‑techniek groeide mijn eigen stijl —  
+       een combinatie van klassieke ambacht en persoonlijke expressie.<br>  
+       Elk werk vertelt een verhaal, gevormd door handen, vuur en verbeelding.</b></p>
+  </section>
+  
+  <section id="galerij" class="bg-section">
+  <img src="IMG-20260610_bg4.jpg" class="bg-photo" alt="">
+    <h2>Unieke keramiekfiguren in kleur & Raku</h2>
+    <div class="gallery">
+      <img src="IMG-20260610_1.jpg" alt="Eigen creatie 1">
+      <img src="IMG-20260610_2.jpg" alt="Eigen creatie 2">
+      <img src="IMG-20260610_3.jpg" alt="Eigen creatie 3">
+      <img src="IMG-20260610_4.jpg" alt="Eigen creatie 4">
+	 
+	  <img src="IMG-20260610_5.jpg" alt="Eigen creatie 5">
+      <img src="IMG-20260610_6.jpg" alt="Eigen creatie 6">
+      <img src="IMG-20260610_7.jpg" alt="Eigen creatie 7">
+      <img src="IMG-20260610_8.jpg" alt="Eigen creatie 8">
+	  
+	  <img src="IMG-20260610-WA0041.jpg" alt="Eigen creatie 9">
+      <img src="IMG-20260610-WA0024.jpg" alt="Eigen creatie 10">
+      <img src="IMG-20260610-WA0023.jpg" alt="Eigen creatie 11">
+      <img src="IMG-20260610-WA0037.jpg" alt="Eigen creatie 12">
+	  
+	  <img src="IMG-20260610-WA0081.jpg" alt="Eigen creatie 13">
+      <img src="IMG-20260610-WA0076.jpg" alt="Eigen creatie 14">
+      <img src="IMG-20260610-WA0074.jpg" alt="Eigen creatie 15">
+      <img src="IMG-20260610-WA0073.jpg" alt="Eigen creatie 16">
+	 
+	  <img src="IMG-20260610-WA0072.jpg" alt="Eigen creatie 17">
+      <img src="IMG-20260610-WA0071.jpg" alt="Eigen creatie 18">
+      <img src="IMG-20260610-WA0069.jpg" alt="Eigen creatie 19">
+      <img src="IMG-20260610-WA0065.jpg" alt="Eigen creatie 20">
+	  
+	  <img src="IMG-20260610-WA0038.jpg" alt="Eigen creatie 21">
+      <img src="IMG-20260610-WA0044.jpg" alt="Eigen creatie 22">
+      <img src="IMG-20260610-WA0012.jpg" alt="Eigen creatie 23">
+      <img src="IMG-20260610-WA0007.jpg" alt="Eigen creatie 24">
+	  
+    </div>
+  </section>
+
+<section id="contact" class="bg-section2">
+    <img src="IMG-20260610_2.jpg" class="bg-photo" alt="">
+    <div class="content">
+        <h2>Contact</h2>
+
+        <div class="contact-item">
+		    <b>
+            <strong>Telefoon:</strong>
+            <span>0496/975642</span>
+			</b>
+        </div>
+
+        <div class="contact-item">
+		    <b>
+		    <strong>Email:</strong>
+            <span>martine.cox63@outlook.com</span>
+			</b>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Zoomfunctie -->
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.onclick = () => { modal.style.display = "block"; modalImg.src = img.src; };
+    });
+    document.querySelector(".close").onclick = () => modal.style.display = "none";
+  </script>
+
 </body>
 </html>
